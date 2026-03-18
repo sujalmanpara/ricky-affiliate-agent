@@ -1,0 +1,128 @@
+{
+  "amazon": {
+    "access_key": "YOUR_AMAZON_ACCESS_KEY",
+    "secret_key": "YOUR_AMAZON_SECRET_KEY",
+    "affiliate_tag": "yourname-20",
+    "region": "us-east-1",
+    "categories": ["Electronics", "Computers", "Office Products"]
+  },
+  "postiz": {
+    "api_key": "YOUR_POSTIZ_API_KEY",
+    "workspace_id": "YOUR_WORKSPACE_ID",
+    "accounts": {
+      "instagram": "instagram_account_id",
+      "twitter": "twitter_account_id",
+      "pinterest": "pinterest_account_id",
+      "facebook": "facebook_account_id"
+    }
+  },
+  "image_ai": {
+    "provider": "fal",
+    "api_key": "YOUR_FAL_AI_KEY",
+    "primary_model": "fal-ai/flux-dev",
+    "fallback_model": "fal-ai/flux-schnell",
+    "default_mode": "image-to-image",
+    "fallback_mode": "text-to-image",
+    
+    "models": {
+      "flux_pro": {
+        "provider": "fal",
+        "model_id": "fal-ai/flux-pro",
+        "cost_per_image": 0.03,
+        "speed": "fast",
+        "quality": "best"
+      },
+      "flux_dev": {
+        "provider": "fal",
+        "model_id": "fal-ai/flux-dev",
+        "cost_per_image": 0.01,
+        "speed": "very_fast",
+        "quality": "good"
+      },
+      "flux_schnell": {
+        "provider": "fal",
+        "model_id": "fal-ai/flux-schnell",
+        "cost_per_image": 0.003,
+        "speed": "ultra_fast",
+        "quality": "decent"
+      },
+      "sdxl": {
+        "provider": "replicate",
+        "model_id": "stability-ai/sdxl",
+        "api_key": "YOUR_REPLICATE_KEY",
+        "cost_per_image": 0.02,
+        "speed": "medium",
+        "quality": "excellent"
+      }
+    },
+    
+    "generation_settings": {
+      "width": 1024,
+      "height": 1024,
+      "num_inference_steps": 30,
+      "guidance_scale": 7.5,
+      "seed": null,
+      "negative_prompt": "low quality, blurry, watermark, text, logo, signature"
+    },
+    
+    "image_to_image": {
+      "strength": 0.7,
+      "guidance_scale": 7.5,
+      "num_inference_steps": 30
+    },
+    
+    "style_model_mapping": {
+      "minimalist": "flux_schnell",
+      "lifestyle": "flux_dev",
+      "hero": "flux_pro",
+      "flat_lay": "flux_dev",
+      "comparison": "sdxl"
+    }
+  },
+  "niche": {
+    "primary": "Tech & Productivity",
+    "categories": ["Electronics", "Computers", "Office Products"],
+    "price_range": {
+      "min": 20,
+      "max": 150
+    },
+    "min_rating": 4.0,
+    "min_reviews": 1000,
+    "min_commission": 5
+  },
+  "posting": {
+    "frequency": "3_per_day",
+    "platforms": ["instagram", "twitter", "pinterest", "facebook"],
+    "platform_priority": {
+      "instagram": true,
+      "twitter": true,
+      "pinterest": true,
+      "facebook": false,
+      "linkedin": false,
+      "tiktok": false,
+      "reddit": false
+    },
+    "schedule": {
+      "morning": "09:00",
+      "afternoon": "14:00",
+      "evening": "18:00"
+    },
+    "image_styles": ["minimalist", "lifestyle", "hero", "flat_lay", "comparison"],
+    "caption_tone": "helpful",
+    "hashtag_count": {
+      "instagram": 10,
+      "twitter": 2,
+      "pinterest": 0,
+      "facebook": 3
+    }
+  },
+  "optimization": {
+    "track_best_times": true,
+    "ab_testing_enabled": true,
+    "auto_adjust_strategy": true,
+    "min_performance_threshold": {
+      "clicks_per_post": 10,
+      "conversion_rate": 2.0
+    }
+  }
+}
