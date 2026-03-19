@@ -1,336 +1,124 @@
-# 🎯 Ricky - AI Affiliate Marketing Agent
+# 🚀 Ricky — AI Affiliate Marketing Agent
 
-**Production-ready Amazon affiliate automation that uses REAL product photos + smart marketing overlays**
+**Paste an Amazon link → Get 15 AI marketing images → Auto-post to Instagram, Twitter, Pinterest.**
 
-[![Price](https://img.shields.io/badge/Price-$49-success)](https://agentplace.sh)
-[![Quality](https://img.shields.io/badge/Product_Accuracy-100%25-brightgreen)](.)
-[![Speed](https://img.shields.io/badge/Speed-5_sec-blue)](.)
-[![Cost](https://img.shields.io/badge/Image_Cost-$0-green)](.)
+Ricky turns any Amazon product into a complete social media marketing campaign in under 5 minutes.
 
----
+## ✨ Features
 
-## 🎨 The Breakthrough
-
-**Most affiliate agents try to GENERATE product images with AI.**  
-**Ricky uses Amazon's EXISTING professional photos + adds marketing text!**
-
-### Why This Works Better
-
-| Approach | Speed | Cost | Accuracy | Quality |
-|----------|-------|------|----------|---------|
-| **AI Generation** | 45 sec | $0.30 | 8/10 | Varies |
-| **Ricky (Amazon photos + text)** | **5 sec** | **$0** | **10/10** | **Professional** |
-
-**Result:** 9x faster, 100% savings, perfect accuracy, guaranteed professional quality! ✅
-
----
-
-## 🚀 How It Works
-
-```
-USER INPUT (5 minutes/day)
-    ↓
-1. PRODUCT EXTRACTION (Camoufox)
-   → Scrapes: title, price, features, high-res images
-   → Adds: Your affiliate tag
-    ↓
-2. IMAGE GENERATION (PIL/Pillow)
-   → Input: Amazon's professional product photo
-   → Adds: Price badges, discount, features
-   → Output: 3 marketing images (Twitter, Instagram, Pinterest)
-    ↓
-3. CAPTION GENERATION (Smart Templates)
-   → Platform-optimized captions
-   → FTC compliance (#ad, affiliate link)
-    ↓
-4. SOCIAL POSTING (Postiz API)
-   → Posts to all platforms
-   → Tracks post IDs
-    ↓
-5. TRACKING & REPORTS
-   → Weekly analysis
-   → Performance metrics
-```
-
-**Time:** 5 seconds per product  
-**Cost:** $0 for images (just text overlays!)  
-**Quality:** 100% accurate (Amazon's own photos!)
-
----
-
-## 📸 Example Output
-
-**Input:** [Samsung Refrigerator on Amazon](https://www.amazon.in/Samsung-Direct-Cool-Refrigerator-RR20D2825HV-NL/dp/B0CPPJ1NW3/)
-
-**Output:**
-
-| Platform | Format | Features |
-|----------|--------|----------|
-| **Twitter** | 16:9 | Price badge (bottom-left), Discount badge (top-right) |
-| **Instagram** | 1:1 | Clean product shot, minimal price badge |
-| **Pinterest** | 2:3 | Title banner, product photo, features list |
-
-See `examples/` folder for actual generated images!
-
----
-
-## 💰 Revenue Model
-
-**Commission Rates (Amazon India):**
-- Electronics: 2-3%
-- Home & Kitchen: 3-5%
-- Fashion: 6-8%
-- Books: 8-10%
-
-**Example Performance:**
-- 3 products/day × 30 days = 90 posts/month
-- Avg product price: ₹3,000
-- Commission: 4% = ₹120 per sale
-- Conversion: 2% = 1.8 sales/product
-- **Monthly revenue: ₹19,440 - ₹24,300**
-
-**Costs:**
-- Ricky: $49 one-time
-- Image generation: $0/month (text overlays!)
-- Postiz API: ~₹500/month (social posting)
-- **Net profit: ₹18,940 - ₹23,800/month**
-
-**ROI:** 47x in first month! 🚀
-
----
+- **🛒 Smart Extraction** — Paste any Amazon URL, get full product data instantly
+- **🎨 AI Image Generation** — 15 creative marketing images per product using Nano Banana Pro
+- **🎯 Category Detection** — Auto-detects product type (electronics, beauty, fashion, etc.)
+- **📐 Platform-Optimized** — Twitter 16:9, Instagram 4:5, Pinterest 2:3
+- **🖼️ Smart Image Selection** — Uses DIFFERENT product images for each scene
+- **📝 Caption Generation** — Platform-specific captions, hashtags, CTAs
+- **📡 Auto-Posting** — Post to all platforms via Postiz API
+- **✅ FTC Compliant** — #ad disclosure on every image
 
 ## 🏗️ Architecture
 
-**5 Core Modules:**
+```
+Amazon URL → Extract → Detect Category → Select Images
+                                              ↓
+                                   Generate 15 AI Scenes
+                                              ↓
+                                    Apply PIL Overlays
+                                              ↓
+                                  Generate Captions
+                                              ↓
+                              Post to Twitter + Instagram + Pinterest
+```
 
-1. **Product Extraction** (Camoufox)
-   - Scrapes Amazon product pages
-   - Extracts: title, price, discount, features, images
-   - Bot-proof (bypasses Amazon detection)
+## 📦 Quick Start
 
-2. **Image Generation** (PIL/Pillow)
-   - Uses Amazon's professional photos
-   - Adds marketing text overlays
-   - Platform-optimized (16:9, 1:1, 2:3)
-
-3. **Caption Generation** (Smart Templates)
-   - Platform-specific styles
-   - FTC compliance
-   - Hashtag optimization
-
-4. **Social Posting** (Postiz API)
-   - Multi-platform (Twitter, Instagram, Pinterest)
-   - Scheduled posting
-   - Performance tracking
-
-5. **Analytics & Reports**
-   - Weekly analysis
-   - Performance metrics
-   - Revenue estimation
-
----
-
-## 📦 Installation
-
-### Prerequisites
-- OpenClaw installed
-- Amazon Associates account (affiliate tag)
-- Postiz API access (social posting)
-
-### Setup
+### 1. Install Dependencies
 ```bash
-# 1. Clone repository
-git clone https://github.com/sujalmanpara/ricky-affiliate-agent.git
-cd ricky-affiliate-agent
-
-# 2. Install to OpenClaw skills
-cp -r . ~/.openclaw/skills/ricky/
-
-# 3. Install dependencies
-pip3 install pillow requests
-
-# 4. Run setup (interactive)
-openclaw invoke ricky setup
-# Asks for: Amazon tag, Postiz credentials, platforms to use
-# Saves to: ~/.ricky/config.yaml (600 permissions)
-
-# 5. Daily usage (give 3 Amazon URLs)
-openclaw invoke ricky run
+pip install requests beautifulsoup4 Pillow pyyaml
 ```
 
-**First-time setup:** 5 minutes  
-**Daily usage:** 5 minutes (pick 3 products)  
-**Everything else:** 100% automated! ✅
-
----
-
-## 🎯 User Workflow
-
-**Morning (5 minutes):**
-1. Browse Amazon deals
-2. Pick 3 good products
-3. Copy URLs
-4. Give to Ricky: `openclaw invoke ricky run`
-
-**Ricky does (100% automated):**
-1. ✅ Scrapes product data
-2. ✅ Gets Amazon's professional photos
-3. ✅ Adds marketing text overlays
-4. ✅ Generates platform-optimized captions
-5. ✅ Posts to Twitter, Instagram, Pinterest
-6. ✅ Tracks performance
-7. ✅ Sends weekly report
-
-**You do:** Check Amazon Associates dashboard for earnings! 💰
-
----
-
-## 📊 Why Amazon Photos Work Better
-
-**Amazon's 7 Professional Photos:**
-1. Clean product shot (white background)
-2. Lifestyle context (in-use scenario)
-3. Feature highlights (close-ups)
-4. Size/dimensions (with measurements)
-5. Multiple angles (360° view)
-6. Interior views (functionality)
-7. Product comparison (variants)
-
-**What Ricky Adds:**
-- Price badges (clear value)
-- Discount highlights (urgency)
-- Feature callouts (benefits)
-- Platform optimization (correct aspect ratios)
-- FTC compliance (legal requirements)
-
-**Result:** Professional quality + marketing psychology = Higher conversions! 📈
-
----
-
-## 📁 Project Structure
-
-```
-ricky-affiliate-agent/
-├── SKILL.md                        # OpenClaw agent definition
-├── SOUL.md                         # Agent personality
-├── setup.sh                        # Installation script
-├── README.md                       # This file
-├── examples/                       # Sample generated images
-│   ├── twitter_final.jpg
-│   ├── instagram_final.jpg
-│   └── pinterest_final.jpg
-├── docs/
-│   ├── UPDATED_STRATEGY.md         # Why Amazon photos work
-│   ├── CORE_ARCHITECTURE.md        # System design
-│   ├── HOW_USER_EARNS_MONEY.md     # Payment flow
-│   ├── INTERACTIVE_SETUP.md        # Setup process
-│   └── IMAGE_GENERATION_STRATEGY.md # Technical details
-└── config.example.yaml             # Configuration template
+### 2. Setup
+```bash
+python3 ricky_config.py setup
 ```
 
----
+### 3. Run
+```bash
+# Generate images only
+python3 ricky_pipeline.py "https://www.amazon.in/dp/B0BZJ9D5W3"
 
-## 🔐 Privacy & Security
+# Generate + auto-post
+python3 ricky_pipeline.py "https://www.amazon.in/dp/B0BZJ9D5W3" --post
+```
 
-**What Ricky needs:**
-- Amazon Associates tag (for affiliate links)
-- Postiz API credentials (for social posting)
+## 📊 Output
 
-**What Ricky does NOT need:**
-- Your Amazon password ❌
-- Your social media passwords ❌
-- Your bank account ❌
+Each run creates:
+```
+~/ricky-output/B0BZJ9D5W3/
+├── twitter/          # 4 images (1344×768)
+│   ├── tw_hero.png
+│   ├── tw_features.png
+│   ├── tw_lifestyle.png
+│   └── tw_cta.png
+├── instagram/        # 8 images (1024×1280)
+│   ├── ig_hook.png
+│   ├── ig_lifestyle.png
+│   ├── ig_flatlay.png
+│   ├── ig_detail.png
+│   ├── ig_transform.png
+│   ├── ig_texture.png
+│   ├── ig_lifestyle2.png
+│   └── ig_cta.png
+├── pinterest/        # 3 images (1000×1500)
+│   ├── pin_guide.png
+│   ├── pin_aesthetic.png
+│   └── pin_lifestyle.png
+└── pipeline_meta.json
+```
 
-**How earnings work:**
-- Ricky posts links → Users click → Amazon tracks
-- Money goes: Amazon → Your bank account (direct)
-- Ricky just estimates performance
-- Real earnings: Check https://affiliate.amazon.in/
+## 🎯 Supported Categories
 
-**Security:**
-- Config stored: `~/.ricky/config.yaml` (600 permissions)
-- No API keys in code
-- Interactive first-time setup
-- All credentials encrypted
+| Category | Example Products | Scene Style |
+|----------|-----------------|-------------|
+| Camera | Sony ZV-1F, GoPro | Creator lifestyle, studio shots |
+| Earbuds | Fire-Boltt, boAt | Music lover, gym, commute |
+| Phone | iPhone, Samsung | Urban lifestyle, tech forward |
+| Beauty | Face wash, serum | Spa aesthetic, glow-up |
+| Fashion | Shoes, clothing | Street style, OOTD |
+| Appliance | Fridge, AC | Modern home, family |
+| Kitchen | Mixer, cookware | Food photography, chef |
+| Fitness | Protein, gym gear | Gym motivation, active |
+| Helmet | Steelbird, Studds | Biker lifestyle, road |
 
----
+## 💰 Cost
 
-## 📈 Performance Metrics
+~$1.50 per product (15 AI image generations via Fal.ai)
 
-**Speed:**
-- Product extraction: ~3 sec (Camoufox)
-- Image generation: ~2 sec (PIL overlays)
-- Caption generation: <1 sec (templates)
-- Social posting: ~5 sec (Postiz API)
-- **Total: ~10 sec per product** ⚡
+## 📡 Supported Platforms (via Postiz)
 
-**Cost:**
-- Image generation: $0 (vs $0.30 with AI)
-- Monthly savings: $27 (90 products)
-- Annual savings: $324
+- ✅ Twitter/X (4-image grid)
+- ✅ Instagram (carousel up to 10 slides)
+- ✅ Pinterest (pins with SEO title + link)
+- 🔜 Facebook, LinkedIn, TikTok
 
-**Accuracy:**
-- Product matching: 100% (Amazon's photos!)
-- FTC compliance: 100% (built-in)
-- Platform optimization: 100% (validated)
+## ⚖️ Compliance
 
----
+- FTC #ad disclosure on every image
+- "Affiliate link" disclosure in captions
+- Amazon Associates TOS compliant
 
-## 🚀 Roadmap
+## 📁 Files
 
-**v1.0 (Current):**
-- ✅ Amazon product extraction
-- ✅ Image generation (Amazon photos + text)
-- ✅ Multi-platform posting
-- ✅ Weekly reports
+| File | Purpose |
+|------|---------|
+| `ricky_pipeline.py` | Main pipeline — one command |
+| `amazon_extractor.py` | Product data extraction |
+| `smart_image_selector.py` | Image-to-scene matching |
+| `scene_engine.py` | Category-specific prompts |
+| `caption_engine.py` | Caption & hashtag generation |
+| `postiz_poster.py` | Social media posting |
+| `ricky_config.py` | Config & setup wizard |
 
-**v1.1 (Planned):**
-- Amazon Product API integration (auto product discovery)
-- AI caption optimization (A/B testing)
-- Performance analytics dashboard
-- Automated posting schedule
+## 📜 License
 
-**v2.0 (Future):**
-- Multi-marketplace support (Flipkart, Myntra)
-- Video content generation (Reels, Shorts)
-- Influencer collaboration tools
-- Advanced analytics & ML optimization
-
----
-
-## 📄 License
-
-MIT License - See LICENSE file
-
----
-
-## 🤝 Support
-
-**Issues:** https://github.com/sujalmanpara/ricky-affiliate-agent/issues  
-**Docs:** See `docs/` folder  
-**Community:** Coming soon!
-
----
-
-## 🎯 Why Ricky?
-
-**Other affiliate agents:**
-- ❌ Try to recreate Amazon's photos with AI (slow, expensive, inaccurate)
-- ❌ Generic prompts = generic results
-- ❌ Complex setup, many dependencies
-
-**Ricky:**
-- ✅ Uses Amazon's existing professional photos (fast, free, perfect!)
-- ✅ Smart text overlays = clear value proposition
-- ✅ Simple setup, minimal dependencies
-- ✅ Production-ready from day 1
-
-**Result:** Better quality, lower cost, faster execution! 🚀
-
----
-
-**Built for:** [agentplace.sh](https://agentplace.sh)  
-**Price:** $49 (one-time)  
-**Status:** Production-ready ✅  
-
-**Get started:** `openclaw invoke ricky setup` 🎯
+MIT
