@@ -33,7 +33,22 @@ from smart_image_selector import (
 from scene_engine import detect_category, get_scene_prompts, get_overlay_config
 
 # ─── CONFIG ──────────────────────────────────────────────────
-FAL_KEY = os.environ.get('FAL_KEY', '9b753dc2-d088-4360-ac80-ccc0b6f5477b:b9158d1cccc64e9ce2e45b103a99e9d9')
+def _get_fal_key():
+    """Get FAL key from env var or config file. Never hardcoded."""
+    key = os.environ.get('FAL_KEY', '')
+    if not key:
+        try:
+            from ricky_config import load_config
+            key = load_config().get('fal_ai', {}).get('api_key', '')
+        except:
+            pass
+    if not key:
+        print("❌ No Fal.ai API key found!")
+        print("   Set FAL_KEY env var or run: python3 ricky_config.py setup")
+        sys.exit(1)
+    return key
+
+FAL_KEY = _get_fal_key()
 NANO_BANANA_URL = "https://fal.run/fal-ai/nano-banana-pro/edit"
 FONT_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 FONT_REG = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
